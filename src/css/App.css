@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+.footer-image {
+    background-image: url("../../public/imkerlogo.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+}
