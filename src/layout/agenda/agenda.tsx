@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import Header from "../additional/header/header";
 import '../../css/App.css'
+import axios from "axios/index";
+import {AgendaResponseInterface} from "../../interfaces/AgendaResponseInterface";
 
 class Agenda extends Component {
     render(): JSX.Element {
@@ -17,6 +19,22 @@ class Agenda extends Component {
             </>
         )
     }
+
+    componentDidMount() {
+        axios.defaults.baseURL = "http://localhost:5000";
+        axios.get('/agenda').then((response) => {
+            const array: AgendaResponseInterface[] = response.data.agenda;
+            array.forEach((key, item) => {
+                this.setState({
+                    agenda: {
+                        item: key.item,
+                        color: key.color
+                    }
+                })
+            })
+        })
+    }
+
 }
 
 export default Agenda;
