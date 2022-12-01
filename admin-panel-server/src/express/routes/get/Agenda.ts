@@ -1,6 +1,15 @@
-import {Router} from "express";
-const router = Router();
+import {Router as agendaRouter} from "express";
+import {AgendaEntity} from "../../../sequelize/entities/AgendaEntity";
 
-router.get("/agenda", (req, res, next) => {
+const router = agendaRouter();
 
+router.get("/agenda", async (req, res, next) => {
+    const agenda = new AgendaEntity();
+    const data = await agenda.findall();
+
+    res.json({
+        agenda: data
+    })
 })
+
+export default router;
