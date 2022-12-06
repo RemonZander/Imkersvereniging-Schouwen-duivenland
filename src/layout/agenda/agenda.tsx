@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import Header from "../additional/header/header";
 import '../../css/App.css'
-import axios from "axios/index";
+import axios from "axios";
 import {AgendaResponseInterface} from "../../interfaces/AgendaResponseInterface";
 
 class Agenda extends Component {
