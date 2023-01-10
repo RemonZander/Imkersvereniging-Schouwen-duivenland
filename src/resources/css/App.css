@@ -3,7 +3,7 @@
 @tailwind components;
 
 .footer-image {
-    background-image: url("../../public/imkerlogo.png");
+    background-image: url("../images/imkerlogo.png");
     background-repeat: no-repeat;
     background-size: auto;
 }

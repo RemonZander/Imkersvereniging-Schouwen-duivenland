@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import Header from "../additional/header/header";
-import '../../css/App.css'
+import Header from "./components/header";
+import '../resources/css/App.css';
 import axios from "axios";
-import {AgendaResponseInterface} from "../../interfaces/AgendaResponseInterface";
+import {AgendaResponseInterface} from "../interfaces/AgendaResponseInterface";
 
 const Agenda = (): JSX.Element => {
     return (

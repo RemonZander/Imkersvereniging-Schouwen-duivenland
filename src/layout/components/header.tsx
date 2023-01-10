@@ -1,11 +1,12 @@
 import React, {Component} from "react";
-import '../../../css/App.css';
+import '../../resources/css/App.css'
 import axios from 'axios';
 import {
     Link
 } from "react-router-dom";
 
 const Header = (): JSX.Element => {
+    
     return (
         <div className="flex w-screen bg-black text-white align-center">
             <div className="m-auto pb-[1%] pt-[1%]">
