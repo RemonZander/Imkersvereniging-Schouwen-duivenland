@@ -2,8 +2,30 @@
 @tailwind utilities;
 @tailwind components;
 
-.footer-image {
-    background-image: url("../images/imkerlogo.png");
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Fonts */
+
+#text-1 {
+    font-family: 'Hind', sans-serif;
+}
+
+#text-2 {
+    font-family: 'Lobster', sans-serif;
+}
+
+/* Images */
+
+#header {
+    background-image: url("../images/banner.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/* #logo {
+    background-image: url("../images/logo.png");
     background-repeat: no-repeat;
     background-size: auto;
-}
+} */
