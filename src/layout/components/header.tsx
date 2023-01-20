@@ -24,24 +24,28 @@ const Header = (): JSX.Element => {
        } else {
             current?.classList.remove("is-active");
        }
-    } 
+    }
+
+    const hasIsActive = (): boolean | undefined => {
+        return hamburgerButton.current?.classList.contains("is-active")
+    }
 
     return ( 
 
-        <div className="" id="header">
+        <div id="header">
 
-            <div className="" id="header-top">
+            <div id="header-top">
 
-                <div className="" id="logo-container">
-                    <img className="" id="logo-image" src={Logo}/> 
+                <div id="logo-container">
+                    <img id="logo-image" src={Logo}/>
                 </div>
 
-                <div className="" id="header-text">
-                    <h1 className="" id="header-text-1">SAMEN OP WEG NAAR</h1>
-                    <h1 className="" id="header-text-2">Bijvriendelijk Schouwen-Duivenland</h1>
+                <div id="header-text">
+                    <h1 id="header-text-1">SAMEN OP WEG NAAR</h1>
+                    <h1 id="header-text-2">Bijvriendelijk Schouwen-Duivenland</h1>
                 </div>
 
-                <div className="" id="hamburger-container">
+                <div id="hamburger-container">
                     <button className="hamburger" onClick={onClick} ref={hamburgerButton} id="hamburger">
                         <div id="bar"></div>
                     </button> 
@@ -49,7 +53,7 @@ const Header = (): JSX.Element => {
 
             </div>
 
-            <nav className="" id="header-nav">
+            <nav id="header-nav">
                 <Link to={`/`} className="" id="router-link">Home</Link>
                 <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
                 <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
@@ -60,16 +64,28 @@ const Header = (): JSX.Element => {
                 <Link to={`/Contact`} className="" id="router-link">Contact</Link>
             </nav>
 
-            <nav className="" id="header-mobile is-active">
-                <Link to={`/`} className="" id="router-link">Home</Link>
-                <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
-                <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
-                <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
-                <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
-                <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
-                <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
-                <Link to={`/Contact`} className="" id="router-link">Contact</Link>
-            </nav>
+            {hasIsActive() ?
+                <nav id="header-mobile is-active">
+                    <Link to={`/`} className="" id="router-link">Home</Link>
+                    <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
+                    <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
+                    <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
+                    <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
+                    <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
+                    <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
+                    <Link to={`/Contact`} className="" id="router-link">Contact</Link>
+                </nav>
+            :
+                <nav id="header-mobile">
+                    <Link to={`/`} className="" id="router-link">Home</Link>
+                    <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
+                    <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
+                    <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
+                    <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
+                    <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
+                    <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
+                    <Link to={`/Contact`} className="" id="router-link">Contact</Link>
+                </nav>}
 
         </div>
         
