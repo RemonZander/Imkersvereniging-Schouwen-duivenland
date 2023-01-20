@@ -1,29 +1,75 @@
-import React, {Component} from "react";
+import React, {Component, useRef} from "react";
 import '../../resources/css/App.css'
+import Logo from '../../resources/images/logo.png';
 import axios from 'axios';
 import {
     Link
 } from "react-router-dom";
+import { RecordWithTtl } from "dns";
+
+
 
 const Header = (): JSX.Element => {
     
-    return (
+    const hamburgerButton = React.createRef<HTMLButtonElement>();
 
-        <div className="pb-[40%]" id="header">
+    const onClick = (event: React.MouseEvent): void => { 
+       const current = hamburgerButton.current;
+       if (current === null) return; 
 
-            <div className="">
-                <div className="" id="logo">
-                    <img src="../resources/images/logo.png" alt="" />
+       //@ts-ignore
+       const containsIsActive = current.classList.contains("is-active")
+       if (!(containsIsActive)) {
+            current?.classList.add("is-active")
+       } else {
+            current?.classList.remove("is-active");
+       }
+    } 
+
+    return ( 
+
+        <div className="" id="header">
+
+            <div className="" id="header-top">
+
+                <div className="" id="logo-container">
+                    <img className="" id="logo-image" src={Logo}/> 
                 </div>
-                <div className="">
-                    <h1 className="font-bold" id="text-1">SAMEN OP WEG NAAR</h1>
-                    <h1 className="" id="text-2">Bijvriendelijk Schouwen-Duivenland</h1>
+
+                <div className="" id="header-text">
+                    <h1 className="" id="header-text-1">SAMEN OP WEG NAAR</h1>
+                    <h1 className="" id="header-text-2">Bijvriendelijk Schouwen-Duivenland</h1>
                 </div>
+
+                <div className="" id="hamburger-container">
+                    <button className="hamburger" onClick={onClick} ref={hamburgerButton} id="hamburger">
+                        <div id="bar"></div>
+                    </button> 
+                </div>
+
             </div>
 
-            <div className="">
-                <div className=""></div>
-            </div>  
+            <nav className="" id="header-nav">
+                <Link to={`/`} className="" id="router-link">Home</Link>
+                <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
+                <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
+                <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
+                <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
+                <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
+                <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
+                <Link to={`/Contact`} className="" id="router-link">Contact</Link>
+            </nav>
+
+            <nav className="" id="header-mobile is-active">
+                <Link to={`/`} className="" id="router-link">Home</Link>
+                <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
+                <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
+                <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
+                <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
+                <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
+                <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
+                <Link to={`/Contact`} className="" id="router-link">Contact</Link>
+            </nav>
 
         </div>
         

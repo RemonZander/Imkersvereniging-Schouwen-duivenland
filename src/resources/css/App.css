@@ -6,26 +6,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
-/* Fonts */
+/* General Styles */
 
-#text-1 {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    font-size: 16px;
+}
+
+/* Fonts Header */
+
+#header-text-1 {
     font-family: 'Hind', sans-serif;
 }
 
-#text-2 {
+#header-text-2 {
     font-family: 'Lobster', sans-serif;
+}
+
+#router-link {
+    font-family: 'Hind', sans-serif;
 }
 
 /* Images */
 
-#header {
+/* #header {
     background-image: url("../images/banner.png");
     background-repeat: no-repeat;
     background-size: 100%;
+} */
+
+/* Header Styling Mobile First Approach */
+
+#header {
+    display: flex;
+    flex-direction: column;
 }
 
-/* #logo {
-    background-image: url("../images/logo.png");
-    background-repeat: no-repeat;
-    background-size: auto;
-} */
+#header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-image {
+    height: 117px;
+    max-width: none;
+}
+
+#header-text {
+    display: none;
+
+    width: 100%;
+
+    background-color: #fff;
+}
+
+#hamburger-container {
+    height: 100%
+}
+
+#hamburger {
+    position: relative;
+    float: right;
+
+    width: 35px;
+}
+
+#bar, #hamburger::before, #hamburger::after {
+    display: block;
+
+    height: 5px;
+
+    margin: 6px 0px;
+
+    content: '';
+    transition: 0.2s;
+    background-color: #000;
+}
+
+#hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#hamburger.is-active::after {
+    transform: rotate(45deg) translate(-9px, -7px);
+}
+
+#hamburger.is-active > #bar {
+    transform: translate(15px, 0);
+    transition: 0.3s all ease-in-out;
+
+    opacity: 0;
+
+    background-color: orange;
+}
+
+#header-top {
+    padding: 20px 20px 0px 20px;
+}
+
+#header-text-1 {
+    font-size: 2rem;
+    
+    color: #000;
+}
+
+#header-text-2 {
+    font-size: 2rem;
+    
+    color: #000;
+}
+
+#header-nav {
+    display: none;
+}
