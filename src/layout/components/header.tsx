@@ -85,7 +85,7 @@ const Header = (): JSX.Element => {
                     <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
                     <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
                     <Link to={`/Contact`} className="" id="router-link">Contact</Link>
-                </nav>}
+                </nav>}    
 
         </div>
         
