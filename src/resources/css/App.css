@@ -108,10 +108,9 @@
 
 /* Hamburger Menu */
 
-/* .header-mobile-is-active {
+#header-mobile .is-active {
     display: flex;
-    flex-direction: 
-
+    flex-direction: column;
     height: 200px;
     width: 200px;
 
@@ -120,7 +119,7 @@
     left: 10px;
 
     background-color: #ffffff;
-} */
+}
 
 #header-top {
     padding: 20px 20px 0px 20px;

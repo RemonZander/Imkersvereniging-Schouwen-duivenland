@@ -1,8 +1,9 @@
-import React, {Component, useRef} from "react";
+import React, {Component, useRef, useState} from "react";
 import '../../resources/css/App.css'
 import Logo from '../../resources/images/logo.png';
 import axios from 'axios';
-import {
+import classNames from "classnames";
+import {    
     Link
 } from "react-router-dom";
 import { RecordWithTtl } from "dns";
@@ -11,9 +12,12 @@ import { RecordWithTtl } from "dns";
 
 const Header = (): JSX.Element => {
     
-    const hamburgerButton = React.createRef<HTMLButtonElement>();
+    const [active, setActive] = useState(false);
 
-    const onClick = (event: React.MouseEvent): void => { 
+    const hamburgerButton = React.createRef<HTMLButtonElement>();
+    const headerMobileRef = React.createRef<HTMLElement>();
+
+    const hamburgerIsActive = (event: React.MouseEvent): void => { 
        const current = hamburgerButton.current;
        if (current === null) return; 
 
@@ -26,8 +30,22 @@ const Header = (): JSX.Element => {
        }
     }
 
-    const hasIsActive = (): boolean | undefined => {
-        return hamburgerButton.current?.classList.contains("is-active")
+    const toggleActive = (event: React.MouseEvent<HTMLButtonElement>): void => {
+        const mobileClassList = headerMobileRef.current?.classList;
+        const containsActive = mobileClassList?.contains("is-active") ? true : false;
+        if (containsActive) {
+            mobileClassList?.remove("is-active");
+        } else {
+            mobileClassList?.add("is-active");
+        }
+    }   
+
+    const onClickFunctions = [hamburgerIsActive, toggleActive];
+
+    const onClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        onClickFunctions.forEach((func) => {
+            func(event);
+        });
     }
 
     return ( 
@@ -63,9 +81,7 @@ const Header = (): JSX.Element => {
                 <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
                 <Link to={`/Contact`} className="" id="router-link">Contact</Link>
             </nav>
-
-            {hasIsActive() ?
-                <nav id="header-mobile is-active">
+            <nav className="header-mobile" ref={headerMobileRef}>
                     <Link to={`/`} className="" id="router-link">Home</Link>
                     <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
                     <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
@@ -74,19 +90,7 @@ const Header = (): JSX.Element => {
                     <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
                     <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
                     <Link to={`/Contact`} className="" id="router-link">Contact</Link>
-                </nav>
-            :
-                <nav id="header-mobile">
-                    <Link to={`/`} className="" id="router-link">Home</Link>
-                    <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
-                    <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
-                    <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
-                    <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
-                    <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
-                    <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
-                    <Link to={`/Contact`} className="" id="router-link">Contact</Link>
-                </nav>}    
-
+            </nav>
         </div>
         
 
