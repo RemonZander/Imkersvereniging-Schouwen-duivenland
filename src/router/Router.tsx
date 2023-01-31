@@ -8,11 +8,11 @@ import {
 const paths = [
     {
         path: "/",
-        element: <Agenda/>
+        element: <Home/>
     },
     {
-        path: "/home",
-        element: <Home/>
+        path: "/agenda",
+        element: <Agenda/>
     }
 ]
 export const router = createBrowserRouter(paths)

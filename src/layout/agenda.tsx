@@ -7,13 +7,10 @@ import {AgendaResponseInterface} from "../interfaces/AgendaResponseInterface";
 const Agenda = (): JSX.Element => {
     return (
         <>
-            <div className="flex flex-col min-h-screen text-white bg-yellow-500">
+            <div className="bg-yellow-500 min-h-screen">
                 <header>
                     <Header/>
                 </header>
-                <main className="flex-grow">
-
-                </main>
             </div>
         </>
     )

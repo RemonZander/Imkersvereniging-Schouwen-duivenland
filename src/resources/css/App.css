@@ -17,7 +17,7 @@
     font-size: 16px;
 }
 
-/* Fonts Header */
+/* Fonts And Sizes Header */
 
 #header-text-1 {
     font-family: 'Hind', sans-serif;
@@ -27,8 +27,23 @@
     font-family: 'Lobster', sans-serif;
 }
 
-#router-link {
+.router-link, #router-link, .router-link-inside {
+    font-size: 20px;
+    font-weight: bold;
     font-family: 'Hind', sans-serif;
+}
+
+@media (min-width: 800px) {
+    .router-link, #router-link, .router-link-inside {
+        font-size: 22px;
+    }
+}
+
+/* Keyframes */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
 
 /* Images */
@@ -46,16 +61,20 @@
     flex-direction: column;
 }
 
-#header-top {
+.header-top {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    padding: 20px 25px 20px 20px;
 }
 
-#logo-image {
+.logo-image {
     height: 117px;
     max-width: none;
+
+    transition: 0.3s ease-in-out;
 }
 
 #header-text {
@@ -66,15 +85,19 @@
     background-color: #fff;
 }
 
-#hamburger-container {
-    height: 100%
+/* Hamburger Menu Styling */
+
+.hamburger-container {
+    height: 100%;
 }
 
 #hamburger {
     position: relative;
     float: right;
 
-    width: 35px;
+    width: 35px; 
+
+    animation: fadeIn 1s;
 }
 
 #bar, #hamburger::before, #hamburger::after {
@@ -106,37 +129,141 @@
     background-color: orange;
 }
 
-/* Hamburger Menu */
+/* Hamburger Navigation Menu */
 
-#header-mobile .is-active {
+.header-nav {
+    display: none;
+}
+
+.header-nav-mobile {
+    display: block;
+    height: 440px;
+    width: 240px;
+
+    position: absolute;
+    top: 162px;
+    left: -250px;
+
+    /* background-color: #fff; */
+    
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.5s;
+}
+
+.header-nav-mobile.is-active {
+    display: block;
+    height: 440px;
+    width: 240px;
+    border-radius: 0px 20px 20px 0px;
+
+    position: absolute;
+    top: 162px;
+    left: 0px;
+
+    background-color: #fff;
+
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.5s;
+}
+
+.header-nav-mobile-container {
     display: flex;
     flex-direction: column;
-    height: 200px;
-    width: 200px;
+    gap: 10px;
 
-    position: relative;
-    top: 0;
-    left: 10px;
+    padding: 40px 0px 0px 35px;
 
-    background-color: #ffffff;
+    color: #323232;
 }
 
-#header-top {
-    padding: 20px 20px 0px 20px;
+.router-link {
+    display: inline-flex;
+
+    gap: 20px;
 }
 
-#header-text-1 {
-    font-size: 2rem;
+.router-link, #router-link, .router-link-inside {
+    overflow: hidden;
+}
+
+/* Tablet Size */
+
+@media (min-width: 800px) {
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     
-    color: #000;
-}
+        padding: 30px 55px 30px 40px;
+    }
 
-#header-text-2 {
-    font-size: 2rem;
+    .logo-image {
+        height: 137px;
+        max-width: none;
+    }
+
+    .header-nav-mobile {
+        height: 540px;
+        width: 300px;
     
-    color: #000;
+        position: absolute;
+        top: 197px;
+        left: -350px;
+    }
+
+    .header-nav-mobile.is-active {
+        height: 540px;
+        width: 300px;
+    
+        position: absolute;
+        top: 197px;
+        left: 0px;
+    }
+
+    .header-nav-mobile-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+        padding: 60px 0px 0px 65px;
+    
+        color: #323232;
+    }
 }
 
-#header-nav {
-    display: none;
+/* Desktop Size */
+
+@media (min-width: 1100px) {
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 30px 55px 30px 40px;
+    }
+
+    .logo-image {
+        height: 150px;
+        max-width: none;
+    }
+
+    .hamburger-container {
+        display: none;
+    }
+
+    .header-nav-mobile {
+        display: none;
+    }
+
+    .header-nav-mobile.is-active {
+        display: none;
+    }
+
+    .header-nav-mobile-container {
+        display: none;
+    }
 }
