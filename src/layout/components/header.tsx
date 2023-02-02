@@ -69,9 +69,9 @@ const Header = (): JSX.Element => {
                     <img className="logo-image" src={Logo}/>
                 </div>
 
-                <div id="header-text">
-                    <h1 id="header-text-1">SAMEN OP WEG NAAR</h1>
-                    <h1 id="header-text-2">Bijvriendelijk Schouwen-Duivenland</h1>
+                <div className="header-text">
+                    <h1 className="header-text-1">SAMEN OP WEG NAAR</h1>
+                    <h1 className="header-text-2">Bijvriendelijk Schouwen-Duivenland</h1>
                 </div>
 
                 <div className="hamburger-container">
@@ -83,51 +83,51 @@ const Header = (): JSX.Element => {
             </div>
 
             <nav className="header-nav">
-                <Link to={`/`} className="" id="router-link">Home</Link>
-                <Link to={`/Agenda`} className="" id="router-link">Agenda</Link>
-                <Link to={`/Nieuws`} className="" id="router-link">Nieuws</Link>
-                <Link to={`/Bijenzwerm`} className="" id="router-link">Bijenzwerm</Link>
-                <Link to={`/Vrienden`} className="" id="router-link">Vrienden</Link>
-                <Link to={`/Projecten`} className="" id="router-link">Projecten</Link>
-                <Link to={`/BIJhouden`} className="" id="router-link">BIJhouden</Link>
-                <Link to={`/Contact`} className="" id="router-link">Contact</Link>
+                <Link to={`/`} className="router-link">Home</Link>
+                <Link to={`/Agenda`} className="router-link">Agenda</Link>
+                <Link to={`/Nieuws`} className="router-link">Nieuws</Link>
+                <Link to={`/Bijenzwerm`} className="router-link">Bijenzwerm</Link>
+                <Link to={`/Vrienden`} className="router-link">Vrienden</Link>
+                <Link to={`/Projecten`} className="router-link">Projecten</Link>
+                <Link to={`/BIJhouden`} className="router-link">BIJhouden</Link>
+                <Link to={`/Contact`} className="router-link">Contact</Link>
             </nav>
 
             <nav className="header-nav-mobile" ref={headerMobileRef}>
 
                 <div className="header-nav-mobile-container">
 
-                    <Link to={`/`} className="router-link" id="">
+                    <Link to={`/`} className="router-link-mobile" id="">
                         <img src={homeIcon}/>
-                        <div className="router-link-inside">Home</div>
+                        <div className="router-link-mobile-inside">Home</div>
                     </Link>
-                    <Link to={`/Agenda`} className="router-link" id="">
+                    <Link to={`/Agenda`} className="router-link-mobile" id="">
                         <img src={agendaIcon}/>
-                        <div className="router-link-inside">Agenda</div>
+                        <div className="router-link-mobile-inside">Agenda</div>
                     </Link>
-                    <Link to={`/Nieuws`} className="router-link" id="">
+                    <Link to={`/Nieuws`} className="router-link-mobile" id="">
                         <img src={newsIcon}/>    
-                        <div className="router-link-inside">Nieuws</div>
+                        <div className="router-link-mobile-inside">Nieuws</div>
                     </Link>
-                    <Link to={`/Bijenzwerm`} className="router-link" id="">
+                    <Link to={`/Bijenzwerm`} className="router-link-mobile" id="">
                         <img src={worldIcon}/>                        
-                        <div className="router-link-inside">Bijenzwerm</div>
+                        <div className="router-link-mobile-inside">Bijenzwerm</div>
                     </Link>
-                    <Link to={`/Vrienden`} className="router-link" id="">
+                    <Link to={`/Vrienden`} className="router-link-mobile" id="">
                         <img src={friendsIcon}/>
-                        <div className="router-link-inside">Vrienden</div>
+                        <div className="router-link-mobile-inside">Vrienden</div>
                     </Link>
-                    <Link to={`/Projecten`} className="router-link" id="">
+                    <Link to={`/Projecten`} className="router-link-mobile" id="">
                         <img src={projectsIcon}/>
-                        <div className="router-link-inside">Projecten</div>
+                        <div className="router-link-mobile-inside">Projecten</div>
                     </Link>
-                    <Link to={`/BIJhouden`} className="router-link" id="">
+                    <Link to={`/BIJhouden`} className="router-link-mobile" id="">
                         <img src={infoIcon}/>
-                        <div className="router-link-inside">BIJhouden</div>
+                        <div className="router-link-mobile-inside">BIJhouden</div>
                     </Link>
-                    <Link to={`/Contact`} className="router-link" id="">
+                    <Link to={`/Contact`} className="router-link-mobile" id="">
                         <img src={contactIcon}/>
-                        <div className="router-link-inside">Contact</div>
+                        <div className="router-link-mobile-inside">Contact</div>
                     </Link>
 
                 </div>
