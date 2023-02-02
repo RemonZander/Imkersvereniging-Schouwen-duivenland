@@ -1,4 +1,5 @@
 import React, {Component, useRef, useState} from 'react';
+import { NavLink } from 'react-router-dom';
 import '../../resources/css/App.css'
 import axios from 'axios';
 import classNames from 'classnames';
@@ -27,6 +28,26 @@ const Header = (): JSX.Element => {
 
     const hamburgerButton = React.createRef<HTMLButtonElement>();
     const headerMobileRef = React.createRef<HTMLElement>();
+    const headerNavRef = React.createRef<HTMLElement>();
+
+    const getNavChildren = (): Element[] | void => {
+        const current = headerNavRef.current;
+        if (current === null) return;
+        const children = Array.from(current.children);
+        return children;
+    }
+
+    const setActiveClass = (event: React.MouseEvent): void => {
+        const navChildren = getNavChildren();
+        if (navChildren === undefined) return;
+        navChildren.forEach((child) => {
+            if (child.classList.contains("active")) {
+                child.classList.remove("active");
+            }
+        });
+        const target = event.target as HTMLElement;
+        target.classList.add("active");
+    }
 
     const hamburgerIsActive = (event: React.MouseEvent): void => { 
        const current = hamburgerButton.current;
@@ -82,15 +103,15 @@ const Header = (): JSX.Element => {
 
             </div>
 
-            <nav className="header-nav">
-                <Link to={`/`} className="router-link">Home</Link>
-                <Link to={`/Agenda`} className="router-link">Agenda</Link>
-                <Link to={`/Nieuws`} className="router-link">Nieuws</Link>
-                <Link to={`/Bijenzwerm`} className="router-link">Bijenzwerm</Link>
-                <Link to={`/Vrienden`} className="router-link">Vrienden</Link>
-                <Link to={`/Projecten`} className="router-link">Projecten</Link>
-                <Link to={`/BIJhouden`} className="router-link">BIJhouden</Link>
-                <Link to={`/Contact`} className="router-link">Contact</Link>
+            <nav className="header-nav" ref={headerNavRef}>
+                <NavLink to={`/`} className="router-link">Home</NavLink>
+                <NavLink to={`/Agenda`} className="router-link">Agenda</NavLink>
+                <NavLink to={`/Nieuws`} className="router-link">Nieuws</NavLink>
+                <NavLink to={`/Bijenzwerm`} className="router-link">Bijenzwerm</NavLink>
+                <NavLink to={`/Vrienden`} className="router-link">Vrienden</NavLink>
+                <NavLink to={`/Projecten`} className="router-link">Projecten</NavLink>
+                <NavLink to={`/BIJhouden`} className="router-link">BIJhouden</NavLink>
+                <NavLink to={`/Contact`} className="router-link">Contact</NavLink>
             </nav>
 
             <nav className="header-nav-mobile" ref={headerMobileRef}>

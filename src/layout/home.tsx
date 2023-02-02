@@ -7,7 +7,7 @@ class Home extends Component {
     render(): JSX.Element {
         return (
             <>
-                <div className="bg-yellow-500 min-h-screen ">
+                <div className="bg-yellow-500 h-screen ">
                     <header>
                         <Header/>
                     </header>
