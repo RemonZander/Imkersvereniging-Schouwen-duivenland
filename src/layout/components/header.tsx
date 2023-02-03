@@ -118,38 +118,38 @@ const Header = (): JSX.Element => {
 
                 <div className="header-nav-mobile-container">
 
-                    <Link to={`/`} className="router-link-mobile" id="">
+                    <NavLink to={`/`} className="router-link-mobile" id="">
                         <img src={homeIcon}/>
                         <div className="router-link-mobile-inside">Home</div>
-                    </Link>
-                    <Link to={`/Agenda`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Agenda`} className="router-link-mobile" id="">
                         <img src={agendaIcon}/>
                         <div className="router-link-mobile-inside">Agenda</div>
-                    </Link>
-                    <Link to={`/Nieuws`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Nieuws`} className="router-link-mobile" id="">
                         <img src={newsIcon}/>    
                         <div className="router-link-mobile-inside">Nieuws</div>
-                    </Link>
-                    <Link to={`/Bijenzwerm`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Bijenzwerm`} className="router-link-mobile" id="">
                         <img src={worldIcon}/>                        
                         <div className="router-link-mobile-inside">Bijenzwerm</div>
-                    </Link>
-                    <Link to={`/Vrienden`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Vrienden`} className="router-link-mobile" id="">
                         <img src={friendsIcon}/>
                         <div className="router-link-mobile-inside">Vrienden</div>
-                    </Link>
-                    <Link to={`/Projecten`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Projecten`} className="router-link-mobile" id="">
                         <img src={projectsIcon}/>
                         <div className="router-link-mobile-inside">Projecten</div>
-                    </Link>
-                    <Link to={`/BIJhouden`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/BIJhouden`} className="router-link-mobile" id="">
                         <img src={infoIcon}/>
                         <div className="router-link-mobile-inside">BIJhouden</div>
-                    </Link>
-                    <Link to={`/Contact`} className="router-link-mobile" id="">
+                    </NavLink>
+                    <NavLink to={`/Contact`} className="router-link-mobile" id="">
                         <img src={contactIcon}/>
                         <div className="router-link-mobile-inside">Contact</div>
-                    </Link>
+                    </NavLink>
 
                 </div>
 
