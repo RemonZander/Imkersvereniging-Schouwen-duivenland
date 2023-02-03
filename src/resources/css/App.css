@@ -194,16 +194,8 @@
     overflow: hidden;
 }
 
-.router-link:hover {
-    background-color: #aa6f00;
-}
-
-.active {
-    background-color: #aa6f00;
-}
-
-.router-link, .active [aria-current="page"] {
-    background-color: #aa6f00;
+.router-link.active {
+    background-color: #FF8A00;
 }
 
 /* Tablet Size */
