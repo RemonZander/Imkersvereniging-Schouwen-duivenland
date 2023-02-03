@@ -190,6 +190,18 @@
     gap: 20px;
 }
 
+.router-link-mobile.active {
+    color: #FF8A00;
+}
+
+.router-link-mobile > svg {
+    stroke: #000;
+}
+
+.router-link-mobile.active > svg {
+    stroke: #FF8A00;
+}
+
 .router-link-mobile, .router-link-mobile-inside {
     overflow: hidden;
 }
