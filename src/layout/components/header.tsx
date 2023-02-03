@@ -29,26 +29,7 @@ const Header = (): JSX.Element => {
     const hamburgerButton = React.createRef<HTMLButtonElement>();
     const headerMobileRef = React.createRef<HTMLElement>();
     const headerNavRef = React.createRef<HTMLElement>();
-
-    const getNavChildren = (): Element[] | void => {
-        const current = headerNavRef.current;
-        if (current === null) return;
-        const children = Array.from(current.children);
-        return children;
-    }
-
-    const setActiveClass = (event: React.MouseEvent): void => {
-        const navChildren = getNavChildren();
-        if (navChildren === undefined) return;
-        navChildren.forEach((child) => {
-            if (child.classList.contains("active")) {
-                child.classList.remove("active");
-            }
-        });
-        const target = event.target as HTMLElement;
-        target.classList.add("active");
-    }
-
+    
     const hamburgerIsActive = (event: React.MouseEvent): void => { 
        const current = hamburgerButton.current;
        if (current === null) return; 
