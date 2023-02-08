@@ -6,14 +6,6 @@ import classNames from 'classnames';
 
 // Importing Images
 import Logo from '../../resources/images/logo.png';
-import homeIcon from '../../resources/images/icons/home-icon.svg';
-import agendaIcon from '../../resources/images/icons/agenda-icon.svg';
-import newsIcon from '../../resources/images/icons/news-icon.svg';
-import worldIcon from '../../resources/images/icons/world-icon.svg';
-import friendsIcon from '../../resources/images/icons/people-icon.svg';
-import projectsIcon from '../../resources/images/icons/map-icon.svg';
-import infoIcon from '../../resources/images/icons/info-icon.svg';
-import contactIcon from '../../resources/images/icons/phone-icon.svg';
 
 import {    
     Link
@@ -105,7 +97,18 @@ const Header = (): JSX.Element => {
 
             <nav className="header-nav" ref={headerNavRef}>
                 <NavLink to={`/`} className="router-link">Home</NavLink>
-                <NavLink to={`/Agenda`} className="router-link">Agenda</NavLink>
+                <div className="dropdown">
+                    <NavLink to={`/Agenda`} className="router-link">Agenda</NavLink>
+
+                    <div className="router-link-dropdown-content">
+                        <NavLink to={`/Cursussen`} className="router-link">Cursussen</NavLink>
+                        <NavLink to={`/Lezingen`} className="router-link">Lezingen</NavLink>
+                        <NavLink to={`/Workshops`} className="router-link">Workshops</NavLink>
+                        <NavLink to={`/Imkercafe`} className="router-link">Imkercafe</NavLink>
+                        <NavLink to={`/LOI`} className="router-link">LOI</NavLink>
+                        <NavLink to={`/Vergaderingen`} className="router-link">Vergaderingen</NavLink>
+                    </div>
+                </div>
                 <NavLink to={`/Nieuws`} className="router-link">Nieuws</NavLink>
                 <NavLink to={`/Bijenzwerm`} className="router-link">Bijenzwerm</NavLink>
                 <NavLink to={`/Vrienden`} className="router-link">Vrienden</NavLink>

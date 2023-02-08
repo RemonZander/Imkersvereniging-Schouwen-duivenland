@@ -38,7 +38,7 @@
 }
 
 .router-link, .router-link-mobile, .router-link-mobile-inside {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     font-family: 'Hind', sans-serif;
 
@@ -210,6 +210,14 @@
     background-color: #FF8A00;
 }
 
+.router-link.active:hover {
+    background-color: #FF8A00;
+}
+
+.router-link:hover {
+    background-color: #ff9b28;
+}
+
 /* Tablet Size */
 
 @media (min-width: 800px) {
@@ -279,7 +287,7 @@
 
         gap: 50px;
     
-        padding: 30px 40px 30px 40px;
+        padding: 30px 40px 35px 40px;
     }
 
     .header-text {
@@ -315,6 +323,33 @@
         animation: fadeIn 0.5s;
     }
 
+    .router-link-dropdown-content {
+        display: none;
+    }
+
+    .dropdown:hover .router-link-dropdown-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dropdown:hover > .router-link {
+        border-radius: 13px 13px 0px 0px;
+
+        animation: fadeIn 0.5s;
+    }
+
+    .router-link-dropdown-content > .router-link {
+        border-radius: 0px;
+    }
+
+    .router-link-dropdown-content:first-child {
+        padding-top: 20px;
+    } 
+
+    .router-link-dropdown-content:last-child {
+        border-radius: 0px 0px 13px 13px;
+    } 
+
     .router-link {
         display: inline-flex;
         align-items: center;
@@ -339,5 +374,13 @@
 
     .header-nav-mobile-container {
         display: none;
+    }
+}
+
+@media (min-width: 1600px) {
+    .router-link {
+        min-width: 170px;
+
+        animation: fadeIn 0.5s;
     }
 }
