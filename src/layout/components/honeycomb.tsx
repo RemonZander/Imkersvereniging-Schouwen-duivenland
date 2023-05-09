@@ -1,8 +1,6 @@
 import React, {Component, useRef, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../resources/css/App.css'
-import axios from 'axios';
-import classNames from 'classnames';
 
 // Importing Images
 import Honeycombs from '../../resources/images/honeycombs.png';
@@ -16,23 +14,26 @@ const Honeycomb = (): JSX.Element => {
             <img src={Honeycombs}/>
             
             <div className="honeycombs-container">
-                <NavLink to={`/imkercafe`} className="router-link-honeycomb" id='router-link-1'>
-                    Imkercafe
+                <NavLink to={`/Agenda`} className="router-link-honeycomb" id='router-link-1'>
+                    Agenda
                 </NavLink>
-                <NavLink to={`/cursussen`} className="router-link-honeycomb" id='router-link-2'>
-                    Cursussen
+                <NavLink to={`/Nieuws`} className="router-link-honeycomb" id='router-link-2'>
+                    Nieuws
                 </NavLink>
-                <NavLink to={`/workshops`} className="router-link-honeycomb" id='router-link-3'>
-                    Workshops
+                <NavLink to={`/Bijenzwerm`} className="router-link-honeycomb" id='router-link-3'>
+                    Bijenzwerm
                 </NavLink>
-                <NavLink to={`/lezingen`} className="router-link-honeycomb" id='router-link-4'>
-                    Lezingen
+                <NavLink to={`/Vrienden`} className="router-link-honeycomb" id='router-link-4'>
+                    Vrienden
                 </NavLink>
-                <NavLink to={`/vergaderingen`} className="router-link-honeycomb" id='router-link-5'>
-                    Vergaderen
+                <NavLink to={`/Projecten`} className="router-link-honeycomb" id='router-link-5'>
+                    Projecten
                 </NavLink>
-                <NavLink to={`/LOI`} className="router-link-honeycomb" id='router-link-6'>
-                    LOI
+                <NavLink to={`/Projecten`} className="router-link-honeycomb" id='router-link-6'>
+                    Bijhouden
+                </NavLink>
+                <NavLink to={`/Contact`} className="router-link-honeycomb" id='router-link-7'>
+                    Contact
                 </NavLink>
             </div>
 

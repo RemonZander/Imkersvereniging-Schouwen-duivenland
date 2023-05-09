@@ -450,17 +450,14 @@ body {
         color: #FBB916;
         animation: fadeIn 0.1s;
     }
-    
-    #router-link-1, #router-link-2, #router-link-3, #router-link-4, #router-link-5, #router-link-6 {
+
+    #router-link-1, #router-link-2, #router-link-3, #router-link-4, #router-link-5, #router-link-6, #router-link-7 {
         position: absolute;
-    
         height: 100px;
         width: 100px;
-    
         display: flex;
         align-items: center;
         justify-content: center;
-    
         cursor: pointer;
     }
     
@@ -492,24 +489,28 @@ body {
     #router-link-4 {
         position: absolute;
     
-        right: 190px;
-        bottom: 213px;
+        right: 102px;
+        bottom: 265px;
     }
-    
+
     #router-link-5 {
         position: absolute;
-    
-        right: 182px;
-        bottom: 110px;
+        right: 181px;
+        bottom: 213px;
     }
-    
+
     #router-link-6 {
         position: absolute;
-    
         right: 103px;
         bottom: 160px;
-    
         z-index: 90;
+    }
+    
+    #router-link-7 {
+        position: absolute;
+    
+        right: 191px;
+        bottom: 107px;
     }
 }
 
