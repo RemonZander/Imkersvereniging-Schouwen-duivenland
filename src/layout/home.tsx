@@ -6,8 +6,7 @@ class Home extends Component {
 
     render(): JSX.Element {
         return (
-            <>
-<<<<<<< Updated upstream
+            <div>
                 <div className="flex flex-col min-h-screen bg-yellow-500">
                     <header>
                         <Header/>
@@ -17,9 +16,11 @@ class Home extends Component {
                             <div className="flex flex-row text-white pl-[5%] lg:pl-[50%] md:pl-[30%] sm:pl-[55%] pt-[5%]">
                                 <div className="absolute b w-5/12 bg-blue-600">
                                     <div>s</div>
-                                </div>
-=======
-                <div className="bg-yellow-500 h-screen">
+                                 </div>
+                            </div>
+                        </div>
+                    </main>     
+                  <div className="bg-yellow-500 h-screen">
                     <header>
                         <Header/>
                     </header>
@@ -30,12 +31,12 @@ class Home extends Component {
 
                             <div className="white-section">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non neque voluptates hic eum beatae animi temporibus doloribus veniam maiores eveniet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nostrum eos deserunt necessitatibus blanditiis ea ratione, earum numquam. Adipisci, optio.</p>
->>>>>>> Stashed changes
                             </div>
                         </div>
                     </main>
                 </div>
-            </>
+            </div>
+          </div>
         )
     }
 }
