@@ -7,11 +7,11 @@ import {
 
 const paths = [
     {
-        path: "/",
+        path: "/agenda",
         element: <Agenda/>
     },
     {
-        path: "/home",
+        path: "/",
         element: <Home/>
     }
 ]

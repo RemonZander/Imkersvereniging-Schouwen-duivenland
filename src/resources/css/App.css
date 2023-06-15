@@ -2,8 +2,587 @@
 @tailwind utilities;
 @tailwind components;
 
-.footer-image {
-    background-image: url("../images/imkerlogo.png");
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* General Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    font-size: 16px;
+}
+
+#homeRoot {
+    position: relative;
+}
+
+/* Background */
+
+body {
+    background-image: url(../../resources/images/background.png);
+    background-size: cover;
+}
+
+/* Fonts And Sizes Header */
+
+.header-text-1 {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Hind', sans-serif;
+
+    overflow-y: hidden;
+
+    color: #FBB916;
+}
+
+.header-text-2 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: 'Lobster', sans-serif;
+
+    overflow-y: hidden;
+}
+
+.router-link, .router-link-mobile, .router-link-mobile-inside {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'Hind', sans-serif;
+
+    overflow-y: hidden;
+}
+
+@media (min-width: 800px) {
+    .router-link-mobile, .router-link-mobile-inside {
+        font-size: 22px;
+    }
+}
+
+/* Keyframes */
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Images */
+
+/* #header {
+    background-image: url("../images/banner.png");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100%;
+} */
+
+/* Header Styling Mobile First Approach */
+
+#header {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #fff;
+
+    padding: 20px 25px 10px 20px;
+}
+
+.logo-image {
+    height: 117px;
+    max-width: none;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease-in-out;
+}
+
+.header-text {
+    display: none;
+}
+
+/* Hamburger Menu Styling */
+
+.hamburger-container {
+    height: 100%;
+}
+
+#hamburger {
+    position: relative;
+    float: right;
+
+    width: 35px; 
+
+    animation: fadeIn 1s;
+}
+
+#bar, #hamburger::before, #hamburger::after {
+    display: block;
+
+    height: 5px;
+
+    margin: 6px 0px;
+
+    content: '';
+    transition: 0.2s;
+    background-color: #000;
+}
+
+#hamburger.is-active::before {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+#hamburger.is-active::after {
+    transform: rotate(45deg) translate(-9px, -7px);
+}
+
+#hamburger.is-active > #bar {
+    transform: translate(15px, 0);
+    transition: 0.3s all ease-in-out;
+
+    opacity: 0;
+
+    background-color: orange;
+}
+
+/* Hamburger Navigation Menu */
+
+.header-nav {
+    display: none;
+}
+
+.header-nav-mobile {
+    display: block;
+    height: 440px;
+    width: 240px;
+
+    position: absolute;
+    top: 162px;
+    left: -250px;
+
+    z-index: 99;
+
+    /* background-color: #fff; */
+    
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.5s;
+}
+
+.header-nav-mobile.is-active {
+    display: block;
+    height: 440px;
+    width: 240px;
+    border-radius: 0px 20px 20px 0px;
+
+    position: absolute;
+    top: 162px;
+    left: 0px;
+
+    background-color: #fff;
+
+    transition: 0.3s ease-in-out;
+    animation: fadeIn 0.5s;
+}
+
+.header-nav-mobile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    padding: 40px 0px 0px 35px;
+
+    color: #323232;
+}
+
+.router-link-mobile {
+    display: inline-flex;
+
+    gap: 20px;
+}
+
+.router-link-mobile.active {
+    color: #FF8A00;
+}
+
+.router-link-mobile > svg {
+    stroke: #000;
+}
+
+.router-link-mobile.active > svg {
+    stroke: #FF8A00;
+}
+
+.router-link-mobile, .router-link-mobile-inside {
+    overflow: hidden;
+}
+
+.router-link.active {
+    background-color: #FF8A00;
+}
+
+.router-link.active:hover {
+    background-color: #FF8A00;
+}
+
+.router-link:hover {
+    background-color: #ff9b28;
+}
+
+/* Tablet Size */
+
+@media (min-width: 800px) {
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    
+        padding: 30px 55px 15px 40px;
+    }
+
+    .logo-image {
+        height: 137px;
+        max-width: none;
+
+        border-radius: 20px;
+    }
+
+    .header-nav-mobile {
+        height: 540px;
+        width: 300px;
+    
+        position: absolute;
+        top: 197px;
+        left: -350px;
+    }
+
+    .header-nav-mobile.is-active {
+        height: 540px;
+        width: 300px;
+    
+        position: absolute;
+        top: 197px;
+        left: 0px;
+    }
+
+    .header-nav-mobile-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    
+        padding: 60px 0px 0px 65px;
+    
+        color: #323232;
+    }
+}
+
+/* Desktop Size */
+
+@media (min-width: 1250px) {
+
+    .logo-container {
+        height: 150px;
+        min-width: 282.05px;
+    }
+
+    .logo-image {
+        height: 150px;
+        max-width: none;
+
+        border-radius: 20px;
+    }
+
+    .header-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 50px;
+    
+        padding: 30px 40px 17.5px 40px;
+    }
+
+    .header-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        height: 150px;
+        width: 100%;
+
+        border-radius: 20px;
+    
+        background-color: #fff;
+
+        animation: fadeIn 0.5s;
+    }
+
+    .header-text-1, .header-text-2 {
+        padding: 0px 0px 0px 30px;
+    }
+
+    .hamburger-container {
+        display: none;
+    }
+
+    .header-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        padding: 17px 40px 0px 40px;
+
+        animation: fadeIn 0.5s;
+    }
+
+    .router-link-dropdown-content {
+        display: none;
+
+        position: absolute;
+        z-index: 99;
+
+        width: 140px;
+    }
+
+    .dropdown:hover .router-link-dropdown-content {
+        display: flex;
+        flex-direction: column;
+
+        animation: fadeIn 0.5s;
+    }
+
+    .dropdown:hover > .router-link {
+        border-radius: 13px 13px 0px 0px;
+    }
+
+    .router-link-dropdown-content > .router-link {
+        border-radius: 0px;
+    }
+
+    .router-link-dropdown-content:first-child {
+        padding-top: 20px;
+    } 
+
+    .router-link-dropdown-content:last-child {
+        border-radius: 0px 0px 13px 13px;
+    } 
+
+    .router-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 40px;
+        min-width: 140px;
+
+        padding: 25px 0px 25px 0px;
+        border-radius: 13px;
+
+        background-color: #fff;
+    }
+
+    .header-nav-mobile {
+        display: none;
+    }
+
+    .header-nav-mobile.is-active {
+        display: none;
+    }
+
+    .header-nav-mobile-container {
+        display: none;
+    }
+}
+
+@media (min-width: 1600px) {
+    .router-link {
+        min-width: 170px;
+
+        animation: fadeIn 0.5s;
+    }
+
+    .router-link-dropdown-content {
+        display: none;
+
+        min-width: 170px;
+    }
+}
+
+/* Honeycomb Navigation */
+
+#honeycomb {
+    display: none;
+}
+
+@media (min-width: 1250px) {
+    #honeycomb {
+        display: flex;
+        flex-direction: row-reverse;
+    
+        position: relative;
+
+        animation: fadeIn 0.5s;
+    }
+    
+    .honeycombs-container {
+        
+    }   
+    
+    .router-link-honeycomb {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: 'Hind', sans-serif;
+    
+        overflow-y: hidden;
+    }
+    
+    .router-link-honeycomb:hover {
+        color: #FBB916;
+        animation: fadeIn 0.1s;
+    }
+
+    #router-link-1, #router-link-2, #router-link-3, #router-link-4, #router-link-5, #router-link-6, #router-link-7 {
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    #router-link-5 {
+        width: 120px;
+    }
+    
+    #router-link-1 {
+        position: absolute;
+    
+        right: 100px;
+        bottom: 473px;
+    }
+    
+    #router-link-2 {
+        position: absolute; 
+    
+        right: 100px;
+        bottom: 367px;
+    }
+    
+    #router-link-3 {
+        position: absolute;
+    
+        right: 190px;
+        bottom: 315px;
+    }
+    
+    #router-link-4 {
+        position: absolute;
+    
+        right: 102px;
+        bottom: 265px;
+    }
+
+    #router-link-5 {
+        position: absolute;
+        right: 181px;
+        bottom: 213px;
+    }
+
+    #router-link-6 {
+        position: absolute;
+        right: 103px;
+        bottom: 160px;
+        z-index: 90;
+    }
+    
+    #router-link-7 {
+        position: absolute;
+    
+        right: 191px;
+        bottom: 107px;
+    }
+}
+
+/* Main Section */
+
+main {
+    padding: 20px 25px 20px 20px;
+
+    animation: fadeIn 0.5s;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    position: absolute;
+
+}
+
+.left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 60%;
+
+    padding: 10px 15px 15px 15px;
+}
+
+.left-section > h1 {
+    font-size: 24px;
+    font-weight: 700;
+
+    color: #fff;
+
+    padding: 0px 0px 0px 15px;
+}
+
+.left-section > .white-section {
+    background-color: #fff;
+
+    padding: 10px 15px 15px 15px;
+    border-radius: 15px;
+}
+
+.white-section > button {
+    background-color: #FF8A00;
+    font-weight: 600;
+
+    margin-top: 15px;
+
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.white-section > button:hover {
+    background-color: #ff9b28;
+}
+
+@media (min-width: 800px) {
+    main {
+        padding: 30px 55px 30px 40px;
+    }
+}
+
+@media (min-width: 1250px) {
+    main {
+        padding: 45px 40px 35px 40px;
+    }
+}
+
+@media (min-width: 1600px) {
+    main {
+        padding: 45px 40px 35px 40px;
+    }
 }
