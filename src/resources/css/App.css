@@ -12,9 +12,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 
-    font-size: 16px;
+    font-size: 16px; 
+
+    overflow-x: hidden;
 }
 
 #homeRoot {
@@ -54,6 +55,10 @@ body {
     font-family: 'Hind', sans-serif;
 
     overflow-y: hidden;
+}
+
+span {
+    font-weight: 600;
 }
 
 @media (min-width: 800px) {
@@ -423,14 +428,31 @@ body {
     display: none;
 }
 
+@keyframes grow {
+    from { transform: scale(0.80); }
+    to { transform: scale(1); }
+}
+
 @media (min-width: 1250px) {
     #honeycomb {
         display: flex;
         flex-direction: row-reverse;
     
-        position: relative;
+        position: fixed;
+        bottom: 0;
+        right: 0;
 
-        animation: fadeIn 0.5s;
+        animation: grow 0.8s;
+    }
+
+    .honeycomb.is-active {
+        display: none;
+        animation: grow 0.8s;
+    }
+
+    #honeycomb > img {
+
+        height: 669px;
     }
     
     .honeycombs-container {
@@ -517,7 +539,7 @@ body {
 /* Main Section */
 
 main {
-    padding: 20px 25px 20px 20px;
+    padding: 20px 20px 0px 20px;
 
     animation: fadeIn 0.5s;
 
@@ -534,7 +556,7 @@ main {
     flex-direction: column;
     gap: 10px;
 
-    width: 60%;
+    width: 100%;
 
     padding: 10px 15px 15px 15px;
 }
@@ -548,6 +570,40 @@ main {
     padding: 0px 0px 0px 15px;
 }
 
+.link {
+    font-size: 16px;
+    color: #FF8A00;
+    text-decoration: underline;
+}
+
+.white-section > p {
+    font-size: 16px;
+}
+
+.readmore-content {
+    font-size: 16px;
+}
+
+span {
+    font-size: 16px;
+}
+
+ul {
+    list-style: inside;
+}
+
+ul > li {
+    font-size: 16px;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+ol > li {
+    font-size: 16px;
+}
+
 .left-section > .white-section {
     background-color: #fff;
 
@@ -557,6 +613,7 @@ main {
 
 .white-section > button {
     background-color: #FF8A00;
+    font-size: 16px;
     font-weight: 600;
 
     margin-top: 15px;
@@ -571,18 +628,66 @@ main {
 
 @media (min-width: 800px) {
     main {
-        padding: 30px 55px 30px 40px;
+        padding: 30px 40px 0px 40px;
+    }
+
+    .link {
+        font-size: 18px;
+        color: #FF8A00;
+        text-decoration: underline;
+    }
+    
+    .white-section > p {
+        font-size: 18px;
+    }
+
+    .readmore-content {
+        font-size: 18px;
+    }
+
+    span {
+        font-size: 18px;
+    }
+
+    ul > li {
+        font-size: 18px;
+    }
+    
+    ol > li {
+        font-size: 18px;
+    }
+    
+    .left-section > .white-section {
+        background-color: #fff;
+    
+        padding: 10px 15px 15px 15px;
+        border-radius: 15px;
+    }
+    
+    .white-section > button {
+        background-color: #FF8A00;
+        font-size: 18px;
+        font-weight: 600;
+    
+        margin-top: 15px;
+    
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 }
 
 @media (min-width: 1250px) {
     main {
-        padding: 45px 40px 35px 40px;
+        padding: 45px 0px 0px 40px;
+    }
+
+    .left-section {
+        width: 60%;
     }
 }
 
 @media (min-width: 1600px) {
     main {
-        padding: 45px 40px 35px 40px;
+        padding: 45px 0px 0px 40px;
     }
 }
