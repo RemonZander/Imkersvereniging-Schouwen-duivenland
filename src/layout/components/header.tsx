@@ -24,8 +24,8 @@ const Header = (): JSX.Element => {
        if (!(containsIsActive)) {
             current?.classList.add("is-active")
        } else {
-            current?.classList.remove("is-active");
-       }
+            current?.classList.remove("is-active");     
+       }       
     }
 
     const toggleActive = (event: React.MouseEvent<HTMLButtonElement>): void => {
@@ -51,7 +51,7 @@ const Header = (): JSX.Element => {
         <div id="header">
 
             <div className="header-top">
-
+          
                 <div className="logo-container">
                     <img className="logo-image" src={Logo}/>
                 </div>
@@ -87,7 +87,7 @@ const Header = (): JSX.Element => {
                 <NavLink to={`/bijenzwerm`} className="router-link">Bijenzwerm</NavLink>
                 <NavLink to={`/vrienden`} className="router-link">Vrienden</NavLink>
                 <NavLink to={`/projecten`} className="router-link">Projecten</NavLink>
-                <NavLink to={`/bijhouden`} className="router-link">BIJhouden</NavLink>
+                <NavLink to={`/bijhouden`} className="router-link">Bijenhouden</NavLink>
                 <NavLink to={`/contact`} className="router-link">Contact</NavLink>
             </nav>
 
@@ -135,7 +135,7 @@ const Header = (): JSX.Element => {
                         <svg width="30" height="30" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8.5 8.5L8.5 12.25M8.5 5.72046V5.6875M1 8.5C1 4.35786 4.35787 1 8.5 1C12.6421 1 16 4.35787 16 8.5C16 12.6421 12.6421 16 8.5 16C4.35786 16 1 12.6421 1 8.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <div className="router-link-mobile-inside">BIJhouden</div>
+                        <div className="router-link-mobile-inside">Bijenhouden</div>
                     </NavLink>
                     <NavLink to={`/contact`} className="router-link-mobile" id="">
                         <svg width="30" height="30" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
